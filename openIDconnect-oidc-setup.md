@@ -1,0 +1,8 @@
+export cluster_name=<CLUSTER-NAME>
+########## environment variable (cluster_name) exists only inside your current terminal session (your shell, like bash, zsh, etc.).
+*********-----To make it permanent, you have to add it into your shell's configuration file (like ~/.bashrc, ~/.zshrc, or ~/.profile).
+
+
+
+commands to configure IAM OIDC provider:
+oidc_id=$(aws eks describe-cluster --name $cluster_name --query "cluster.identity.oidc.issuer" --output text | cut -d '/' -f 5) 
